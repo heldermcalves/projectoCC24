@@ -4,7 +4,7 @@ public class Node {
     InetAddress address; 
     int port;
 
-    public Node(String name, InetAddress address, int port) {
+    public Node(InetAddress address, int port) {
         this.address = address;
         this.port = port;
     }

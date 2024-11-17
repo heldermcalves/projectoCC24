@@ -1,7 +1,7 @@
+import java.io.IOException;
 import java.net.*;
 import java.util.*;
 import java.util.concurrent.locks.*;;
-
 
 public class NetTaskServer implements Runnable {
     ReentrantLock lock;
@@ -9,7 +9,7 @@ public class NetTaskServer implements Runnable {
     boolean serverReceiver;
     boolean isTimer;
     
-    HashMap<String,Integer> portSet;
+    HashMap<String,Node> clientSet;
     List<NetTaskPacket> datagramList;
     int window;
 
@@ -25,8 +25,6 @@ public class NetTaskServer implements Runnable {
         }
     }
 
-    public void syncToClients() {
-
-    }
+    
     
 }
