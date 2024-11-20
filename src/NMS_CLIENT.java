@@ -1,3 +1,4 @@
+import java.util.*;
 import java.io.*;
 import java.net.*;
 import java.lang.String;
@@ -9,8 +10,12 @@ public class NMS_CLIENT {
         Node server = new Node(InetAddress.getByName(serverIP), serverPort);
         
         DatagramSocket clientSocket = new DatagramSocket(7777);
-
         NMS_CLIENT.syncToServer(clientSocket, server);
+
+        ArrayList<NetTaskPacket> packetList = new ArrayList<NetTaskPacket>();
+
+        Thread netTaskClient = new Thread(new NetTaskClient(packetList,clientSocket,server));
+        Thread taskWorker;
         
         
     }
